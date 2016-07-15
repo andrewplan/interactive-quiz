@@ -7,34 +7,113 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header>
+        <header class="content">
             <h1>Test Your Pen:  A Songwriting Quiz</h1>
         </header>
         <section class="content">
-            <div class="question-1">
-                <h2>Question about which song demonstrates [insert songwriting technique]</h2>
-                <div class="hint-container-1">
+            <div id="ready-state">
+                <h2>Are you ready to test your pen?</h2>
+                <form id="start-quiz">
+                    <input class="start-quiz" type="submit" value="I was born ready.">
+                </form>
+            </div>
+            <div id="question-1">
+                <h2>Question 1:  Which song demonstrates [insert songwriting technique]?</h2>
+                <div class="hint-container">
                     <form id="hint-1">
                         <input class="hint-1" type="submit" value="Hint">
                     </form>
-                    <span>Hint 1 goes here</span>
+                    <span id="hint-1-text">Hint 1 goes here (definition of technique)</span>
                 </div>
                 <br />
                 <form id="answers-1">
                     <input type="radio" name="answers-1" value="Answer 1">Answer 1<br>
                     <input type="radio" name="answers-1" value="Answer 2">Answer 2<br>
                     <input type="radio" name="answers-1" value="Answer 3">Answer 3<br>
+                    <input class="submit-answer" type="submit" value="Submit answer">
                 </form>
                 <br />
-                <form id="submit-answer">
+            </div>
+            <div id="question-2">
+                <h2>Question 2:  Which song demonstrates [insert songwriting technique]?</h2>
+                <div class="hint-container">
+                    <form id="hint-2">
+                        <input class="hint-2" type="submit" value="Hint">
+                    </form>
+                    <span id="hint-2-text">Hint 2 goes here (definition of technique)</span>
+                </div>
+                <br />
+                <form id="answers-2">
+                    <input type="radio" name="answers-2" value="Answer 1">Answer 1<br>
+                    <input type="radio" name="answers-2" value="Answer 2">Answer 2<br>
+                    <input type="radio" name="answers-2" value="Answer 3">Answer 3<br>
                     <input class="submit-answer" type="submit" value="Submit answer">
+                </form>
+                <br />
+            </div>
+            <div id="question-3">
+                <h2>Question 3:  Which song demonstrates [insert songwriting technique]?</h2>
+                <div class="hint-container">
+                    <form id="hint-3">
+                        <input class="hint-3" type="submit" value="Hint">
+                    </form>
+                    <span id="hint-3-text">Hint 3 goes here (definition of technique)</span>
+                </div>
+                <br />
+                <form id="answers-2">
+                    <input type="radio" name="answers-3" value="Answer 1">Answer 1<br>
+                    <input type="radio" name="answers-3" value="Answer 2">Answer 2<br>
+                    <input type="radio" name="answers-3" value="Answer 3">Answer 3<br>
+                    <input class="submit-answer" type="submit" value="Submit answer">
+                </form>
+                <br />
+            </div>
+            <div id="question-4">
+                <h2>Question 4:  Which song demonstrates [insert songwriting technique]?</h2>
+                <div class="hint-container">
+                    <form id="hint-4">
+                        <input class="hint-4" type="submit" value="Hint">
+                    </form>
+                    <span id="hint-4-text">Hint 4 goes here (definition of technique)</span>
+                </div>
+                <br />
+                <form id="answers-4">
+                    <input type="radio" name="answers-4" value="Answer 1">Answer 1<br>
+                    <input type="radio" name="answers-4" value="Answer 2">Answer 2<br>
+                    <input type="radio" name="answers-4" value="Answer 3">Answer 3<br>
+                    <input class="submit-answer" type="submit" value="Submit answer">
+                </form>
+                <br />
+            </div>
+            <div id="question-5">
+                <h2>Question 5:  Which song demonstrates [insert songwriting technique]?</h2>
+                <div class="hint-container">
+                    <form id="hint-5">
+                        <input class="hint-5" type="submit" value="Hint">
+                    </form>
+                    <span id="hint-5-text">Hint 5 goes here (definition of technique)</span>
+                </div>
+                <br />
+                <form id="answers-5">
+                    <input type="radio" name="answers-5" value="Answer 1">Answer 1<br>
+                    <input type="radio" name="answers-5" value="Answer 2">Answer 2<br>
+                    <input type="radio" name="answers-5" value="Answer 3">Answer 3<br>
+                    <input class="submit-answer" type="submit" value="Submit answer">
+                </form>
+                <br />
+            </div>
+            <div id="results-section">
+                <h2>Your final score: </h2>
+                <h2 id="ranking"></h2>
+                <form id="restart-quiz">
+                    <input class="restart-quiz" type="submit" value="I wanna do it again!">
                 </form>
             </div>
         </section>
         <footer class="content">
             <div class="progress-tracker">
-                <span>Total score:<span id="total-score"></span>/5</span>
-                <span>Questions answered:<span id="questions-answered"></span>/5</span>
+                <span id="total-score"><h3>Total score:<span id="total-score-value"></span>/ 5</h3></span>
+                <span id="questions-answered"><h3>Questions answered:<span id="questions-answered-value"></span>/ 5</h3></span>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>

@@ -1,4 +1,96 @@
 
-.hint-container-1 {
+body {
+    background-color: darkred;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 0em .1em 0em black;
+}
+
+section {
+    display: block;
+}
+
+#ready-state, #question-1, #question-2, #question-3, #question-4, #question-5, #results-section {
+    padding-top: .2em;
+    padding-left: 3em;
+    background-color: navajowhite;
+    height: 16em;
+}
+
+#ready-state > h2 {
+    margin-top: 5em;
+    margin-left: 4em;
+    text-align: center;
+    width: 20em;
+}
+
+.start-quiz {
+    margin-left: 16em;
+}
+
+#answers-1, #answers-2, #answers-3, #answers-4, #answers-5 {
+    margin-top: 1em;
+}
+
+#hint-1-text, #hint-2-text, #hint-3-text, #hint-4-text, #hint-5-text {
+    margin-left: 0.5em;
+}
+
+.hint-container {
     display: inline-flex;
+}
+
+.content {
+    width: 50em;
+    margin: 0 auto;
+}
+
+.submit-answer {
+    margin-top: 1em;
+}
+
+#results-section > h2 {
+    margin-top: 4em;
+    margin-left: 4em;
+    text-align: center;
+    width: 20em;
+}
+
+#questions-answered {
+    margin-left: 3em;
+}
+
+#total-score-value {
+    margin-left: 1em;
+}
+
+#questions-answered-value {
+    margin-left: 1em;
+}
+
+.progress-tracker {
+    margin-left: 11em;
+    display: inline-flex;
+    text-align: center;
+}
+
+footer {
+    background-color: indianred
+}
+
+
+
+
+.restart-quiz {
+    margin-left: 16.2em;
+}
+
+
+
+#restart-quiz {
+    padding-bottom: 2em;
 }
