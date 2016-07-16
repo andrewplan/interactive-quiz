@@ -16,20 +16,21 @@ section {
 
 #ready-state, #question-1, #question-2, #question-3, #question-4, #question-5, #results-section {
     padding-top: .2em;
-    padding-left: 3em;
+    padding-left: 1em;
     background-color: navajowhite;
-    height: 16em;
+    height: 30em;
+    border: 1px solid black; /*for styling purposes*/
 }
 
 #ready-state > h2 {
-    margin-top: 5em;
-    margin-left: 4em;
+    margin-top: 8em;
+    margin-left: 6em;
     text-align: center;
     width: 20em;
 }
 
 .start-quiz {
-    margin-left: 16em;
+    margin-left: 19em;
 }
 
 #answers-1, #answers-2, #answers-3, #answers-4, #answers-5 {
@@ -42,6 +43,7 @@ section {
 
 .hint-container {
     display: inline-flex;
+    width: 42em;
 }
 
 .content {
@@ -49,19 +51,30 @@ section {
     margin: 0 auto;
 }
 
-.submit-answer {
+#submit-answer-1, #submit-answer-2, #submit-answer-3, #submit-answer-4, #submit-answer-5  {
     margin-top: 1em;
 }
 
 #results-section > h2 {
-    margin-top: 4em;
-    margin-left: 4em;
+    margin-left: 6em;
     text-align: center;
     width: 20em;
 }
 
+#final-score-label {
+    margin-top: 7em;
+}
+
+.restart-quiz {
+    margin-left: 19.8em;
+}
+
+#restart-quiz {
+    padding-bottom: 2em;
+}
+
 #questions-answered {
-    margin-left: 3em;
+    margin-left: 5.5em;
 }
 
 #total-score-value {
@@ -82,15 +95,20 @@ footer {
     background-color: indianred
 }
 
-
-
-
-.restart-quiz {
-    margin-left: 16.2em;
+#ranking {
+    text-align: center;
 }
 
+#correct-1, #correct-2, #correct-3, #correct-4, #correct-5 {
+    font-style: italic;
+    font-weight: bold;
+    color: limegreen;
+    font-size: 1.5em;
+}
 
-
-#restart-quiz {
-    padding-bottom: 2em;
+#incorrect-1b, #incorrect-1c, #incorrect-2a, #incorrect-2b, #incorrect-3a, #incorrect-3c, #incorrect-4a, #incorrect-4b, #incorrect-5b, #incorrect-5c {
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    font-size: 1.5em;
 }
