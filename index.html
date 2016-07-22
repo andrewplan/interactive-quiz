@@ -13,7 +13,7 @@
         <section class="content">
             <div id="ready-state">
                 <h2>Are you ready to test your pen?</h2>
-                <form id="start-quiz">
+                <form id="start-quiz" action="javascript:startQuiz()">
                     <input class="start-quiz" type="submit" value="I was born ready.">
                 </form>
             </div>
@@ -21,24 +21,25 @@
                 <h2>Question 1:  Which song's chorus melodies are characterized by an "inverted U" contour?</h2>
                 <div class="hint-container">
                     <form id="hint-1-toggle">
-                        <input class="hint-1" type="submit" value="Hint">
+                        <input id="hint-1" type="submit" value="Hint" onclick="javascript:showHint1()">
+                        <input id="hide-hint-1" type="submit" value="Hide hint" onclick="hideHint1()">
                     </form>
                     <span id="hint-1-text">An "inverted U" melodic countour means that the melody ascends in pitch, then descends.</span>
                 </div>
                 <br />
-                <form id="answers-1">
-                    <input type="radio" name="answers-1" value="Answer 1"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)<span id="correct-1"> You got it right!</span><br>
-                    <input type="radio" name="answers-1" value="Answer 2"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)<span id="incorrect-1b"> Wrong...</span><br>
-                    <input type="radio" name="answers-1" value="Answer 3"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)<span id="incorrect-1c"> Wrong...</span><br> 
-                    <input id="submit-answer-1" type="submit" value="Submit answer">
-                    <input id="next-question-1" type="submit" value="Next question">
+                <form id="answers1" >
+                    <input type="radio" name="answers-1" value="right"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)<span id="correct-1"> You got it right!</span><br>
+                    <input type="radio" name="answers-1" value="wrongB"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)<span id="incorrect-1b"> Wrong...</span><br>
+                    <input type="radio" name="answers-1" value="wrongC"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)<span id="incorrect-1c"> Wrong...</span><br> 
+                    <input id="submit-answer-1" type="submit" value="Submit answer" onclick="javascript:evaluateQuestion1()">
+                    <input id="next-question-1" type="submit" value="Next question" onclick="javascript:moveToQuestion2()">
                 </form>
                 <br />
             </div>
             <div id="question-2">
                 <h2>Question 2:  Which song's chorus melody differentiates itself at the beginning with a syncopated staccato melody?</h2>
                 <div class="hint-container">
-                    <form id="hint-2-toggle">
+                    <form id="hint-2-toggle" action="javascript:showHint2()">
                         <input class="hint-2" type="submit" value="Hint">
                     </form>
                     <span id="hint-2-text">"Syncopated" means beats other than the downbeat are emphasized in the melody.  "Staccato" means that the melody has notes of extrememly short duration, like a pulse. </span>
