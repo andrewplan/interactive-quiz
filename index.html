@@ -27,13 +27,21 @@
                     <span id="hint-1-text">An "inverted U" melodic countour means that the melody ascends in pitch, then descends.</span>
                 </div>
                 <br />
-                <form id="answers1" >
-                    <input type="radio" name="answers-1" value="right"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)<span id="correct-1"> You got it right!</span><br>
-                    <input type="radio" name="answers-1" value="wrongB"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)<span id="incorrect-1b"> Wrong...</span><br>
-                    <input type="radio" name="answers-1" value="wrongC"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)<span id="incorrect-1c"> Wrong...</span><br> 
+                <form id="answers1form" >
+                    <input type="radio" name="answers1" value="right"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)
+                    <span id="correct-1"> You got it right!</span><br>
+                    <input type="radio" name="answers1" value="wrongB"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)
+                    <span id="incorrect-1b"> Wrong...</span><br>
+                    <input type="radio" name="answers1" value="wrongC"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)
+                    <span id="incorrect-1c"> Wrong...</span><br> 
                     <input id="submit-answer-1" type="submit" value="Submit answer" onclick="javascript:evaluateQuestion1()">
                     <input id="next-question-1" type="submit" value="Next question" onclick="javascript:moveToQuestion2()">
                 </form>
+                <script>
+                    if(answers1[0].value = readCookie("answers1")) document.answers1form.answers1[0].checked = true;
+                    if(answers1[1].value = readCookie("answers1")) document.answers1form.answers1[1].checked = true;
+                    if(answers1[2].value = readCookie("answers1")) document.answers1form.answers1[2].checked = true;
+                </script>
                 <br />
             </div>
             <div id="question-2">

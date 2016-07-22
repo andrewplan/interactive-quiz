@@ -1,24 +1,33 @@
 var correctAnswers = 0;
 var questionsAnswered = 0;
+var answers1;
 
-// Original JavaScript code by Chirp Internet: www.chirp.com.au
-  // Please acknowledge use of this code by including this header.
-
-var today = new Date();
-var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
-
-function setCookie(name, value)
-{
-document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+//http://www.quirksmode.org/js/cookies.html
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
 }
 
-function storeValuesQ1 (form) {
-    setCookie("field1", form.field1.value);
-    setCookie("field2", form.field2.value);
-    setCookie("field3", form.field3.value);
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function storeValuesQ1 (form, index) {
+    createCookie("answers1", form.answers1[index].value);
     return true;
 }
-
 
 function startQuiz () {
     $("#ready-state").hide();
@@ -53,7 +62,7 @@ function hideHint1 () {
 
 function evaluateQuestion1 () {
     event.preventDefault();
-    var answers1 = document.getElementsByName('answers-1');
+    answers1 = document.getElementsByName('answers1');
     for(i = 0; i < answers1.length; i++) {
         if(answers1[i].checked) {
             if(answers1[i].value === "right") {
@@ -68,17 +77,17 @@ function evaluateQuestion1 () {
             } 
             $("#submit-answer-1").hide();
             $("#next-question-1").show();
+            
         }
         if (answers1[0].checked == false && answers1[1].checked == false && answers1[2].checked == false) {
             alert("You must choose an answer!");
             break;
         }
-        
-        $("#total-score-value").text(correctAnswers + " ");
-        questionsAnswered++;
-        $("#questions-answered-value").text(questionsAnswered + " ");
-        //storeValuesQ1(answers1);   
-    } 
+        storeValuesQ1(answers1form, i);
+    }
+    questionsAnswered++;
+    $("#questions-answered-value").text(questionsAnswered + " ");
+    $("#total-score-value").text(correctAnswers + " ");
 }
 
 function moveToQuestion2 () {
@@ -110,11 +119,6 @@ $(document).ready(function() {
     $("#question-5").hide();
     $("#results-section").hide();
     $("#ready-state").show();
-    
-    if(field1 = getCookie("field1")) document.answers1.field1.value = field1;
-    if(field2 = getCookie("field2")) document.answers1.field2.value = field2;
-    if(field3 = getCookie("field3")) document.answers1.field3.value = field3;
-    
 });
 
 //code to move users from question to question
