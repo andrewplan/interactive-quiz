@@ -1,11 +1,6 @@
 var correctAnswers = 0;
 var questionsAnswered = 0;
 var totalScore = 0;
-var usedHint1;
-var usedHint2;
-var usedHint3;
-var usedHint4;
-var usedHint5;
 
 function createCookie (name,value) {
     document.cookie = name+"="+value+";";
@@ -51,12 +46,9 @@ function showHint1 () {
     if (window.confirm("If I show you the hint, you'll only receive half credit for your answer if correct.  Is that okay?")) {
         $("#show-hint-1").hide();
         $("#hint-1-text").show();
-        usedHint1 = true;
         createCookie("usedHint1", true);
-        alert(document.cookie);
     }
     else {
-        usedHint1 = false;
         createCookie("usedHint1", false);
         alert("Good luck!");
     }
@@ -94,11 +86,9 @@ function showHint2 () {
     if (window.confirm("If I show you the hint, you'll only receive half credit for your answer if correct.  Is that okay?")) {
         $("#show-hint-2").hide();
         $("#hint-2-text").show();
-        usedHint2 = true;
         createCookie("usedHint2", true);
     }
     else {
-        usedHint2 = false;
         createCookie("usedHint2", false);
         alert("Good luck!");
     }
@@ -136,11 +126,9 @@ function showHint3 () {
     if (window.confirm("If I show you the hint, you'll only receive half credit for your answer if correct.  Is that okay?")) {
         $("#show-hint-3").hide();
         $("#hint-3-text").show();
-        usedHint3 = true;
         createCookie("usedHint3", true);
     }
     else {
-        usedHint3 = false;
         createCookie("usedHint3", false);
         alert("Good luck!");
     }
@@ -178,11 +166,9 @@ function showHint4 () {
     if (window.confirm("If I show you the hint, you'll only receive half credit for your answer if correct.  Is that okay?")) {
         $("#show-hint-4").hide();
         $("#hint-4-text").show();
-        usedHint4 = true;
         createCookie("usedHint4", true);
     }
     else {
-        usedHint4 = false;
         createCookie("usedHint4", false);
         alert("Good luck!");
     }
@@ -220,11 +206,9 @@ function showHint5 () {
     if (window.confirm("If I show you the hint, you'll only receive half credit for your answer if correct.  Is that okay?")) {
         $("#show-hint-5").hide();
         $("#hint-5-text").show();
-        usedHint5 = true;
-        createCookie("usedHint5", false);
+        createCookie("usedHint5", true);
     }
     else {
-        usedHint5 = false;
         createCookie("usedHint5", false);
         alert("Good luck!");
     }
