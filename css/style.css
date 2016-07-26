@@ -60,24 +60,37 @@ h1 {
 }
 
 #final-score-label {
-    margin-top: 7em;
+    margin-top: 4.5em;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
-.restart-quiz {
-    margin-left: 19.8em;
+#final-score-value {
+    margin-top: .3em;
+    text-align: center;
+    font-size: 4em;
+}
+
+#ranking {
+    margin-top: .7em;
+    text-align: center;
+    font-size: 1.8em;
+    font-style: italic;
 }
 
 #restart-quiz {
+    margin-left: 19.8em;
+}
+
+#restart-quiz-form {
+    margin-top: 2em;
     padding-bottom: 2em;
 }
 
 #questions-answered {
     margin-left: 7em;
     text-align: center;
-}
-
-#total-score-value {
-    margin-left: 1em;
 }
 
 #questions-answered-value {
@@ -92,8 +105,4 @@ h1 {
 
 footer {
     background-color: indianred
-}
-
-#ranking {
-    text-align: center;
 }

@@ -36,11 +36,6 @@
                     <input id="submit-answer-1" class="submit-answer"  type="submit" value="Submit answer" onclick="javascript:evaluateQuestion1()">
                     <input id="next-question-2" class="next-question" type="submit" value="Next question" onclick="javascript:moveToQuestion2()">
                 </form>
-                <!-- <script>
-                    if(answers1[0].value = readCookie("answers1")) document.answers1form.answers1[0].checked = true;
-                    if(answers1[1].value = readCookie("answers1")) document.answers1form.answers1[1].checked = true;
-                    if(answers1[2].value = readCookie("answers1")) document.answers1form.answers1[2].checked = true;
-                </script> -->
                 <br />
             </div>
             <div id="question-2" class="questions">
@@ -121,10 +116,11 @@
                 <br />
             </div>
             <div id="results-section">
-                <h2 id="final-score-label">Your final score: <h2 id="final-score-value"></h2></h2>
-                <h2 id="ranking">You're a rockstar! (ranking determined by score)</h2>
-                <form id="restart-quiz">
-                    <input class="restart-quiz" type="submit" value="Have another go!">
+                <div id="final-score-label">Your final score: </div>
+                <div id="final-score-value"></div>
+                <div id="ranking"></div>
+                <form id="restart-quiz-form">
+                    <input id="restart-quiz" type="submit" value="Have another go!">
                 </form>
             </div>
         </section>

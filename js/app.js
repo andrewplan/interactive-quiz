@@ -42,7 +42,7 @@ function startQuiz () {
     $("#results-section").hide();
     $("#hint-1-text").hide();
     $("#next-question-2").hide();
-    $("#question-5").show();
+    $("#question-1").show();
 }
 
 //Question 1 functionality
@@ -52,9 +52,12 @@ function showHint1 () {
         $("#show-hint-1").hide();
         $("#hint-1-text").show();
         usedHint1 = true;
+        createCookie("usedHint1", true);
+        alert(document.cookie);
     }
     else {
         usedHint1 = false;
+        createCookie("usedHint1", false);
         alert("Good luck!");
     }
 }
@@ -92,9 +95,11 @@ function showHint2 () {
         $("#show-hint-2").hide();
         $("#hint-2-text").show();
         usedHint2 = true;
+        createCookie("usedHint2", true);
     }
     else {
         usedHint2 = false;
+        createCookie("usedHint2", false);
         alert("Good luck!");
     }
 } 
@@ -132,9 +137,11 @@ function showHint3 () {
         $("#show-hint-3").hide();
         $("#hint-3-text").show();
         usedHint3 = true;
+        createCookie("usedHint3", true);
     }
     else {
         usedHint3 = false;
+        createCookie("usedHint3", false);
         alert("Good luck!");
     }
 } 
@@ -172,9 +179,11 @@ function showHint4 () {
         $("#show-hint-4").hide();
         $("#hint-4-text").show();
         usedHint4 = true;
+        createCookie("usedHint4", true);
     }
     else {
         usedHint4 = false;
+        createCookie("usedHint4", false);
         alert("Good luck!");
     }
 } 
@@ -212,9 +221,11 @@ function showHint5 () {
         $("#show-hint-5").hide();
         $("#hint-5-text").show();
         usedHint5 = true;
+        createCookie("usedHint5", false);
     }
     else {
         usedHint5 = false;
+        createCookie("usedHint5", false);
         alert("Good luck!");
     }
 } 
@@ -241,48 +252,65 @@ function goToResults () {
     event.preventDefault();
     $(".questions").hide();
     $("#results-section").show();
-    //code to evaluate answers
-    if (readCookie("answer1").value === 1) {
-        alert("it works!")
+    //code to tally final score
+    var cookieAnswer1 = readCookie("answer1");
+    var cookieAnswer2 = readCookie("answer2");
+    var cookieAnswer3 = readCookie("answer3");
+    var cookieAnswer4 = readCookie("answer4");
+    var cookieAnswer5 = readCookie("answer5");
+    var cookieUsedHint1 = readCookie("usedHint1");
+    var cookieUsedHint2 = readCookie("usedHint2");
+    var cookieUsedHint3 = readCookie("usedHint3");
+    var cookieUsedHint4 = readCookie("usedHint4");
+    var cookieUsedHint5 = readCookie("usedHint5");
+    
+    if (cookieAnswer1 === "1") {
         totalScore++;
-        if (usedHint1 == true) {
+        if (cookieUsedHint1 === "true") {
             totalScore = totalScore - 0.5;
         }
     }
-    if (readCookie("answer2").value === 3) {
+    if (cookieAnswer2 === "3") {
         totalScore++;
-        if (usedHint2 == true) {
+        if (cookieUsedHint2 === "true") {
             totalScore = totalScore - 0.5;
         }
     }
-    if (readCookie("answer3").value === 2) {
+    if (cookieAnswer3 === "2") {
         totalScore++;
-        if (usedHint3 == true) {
+        if (cookieUsedHint3 === "true") {
             totalScore = totalScore - 0.5;
         }
     }
-    if (readCookie("answer4").value === 3) {
+    if (cookieAnswer4 === "3") {
         totalScore++;
-        if (usedHint4 == true) {
+        if (cookieUsedHint4 === "true") {
             totalScore = totalScore - 0.5;
         }
     }
-    if (readCookie("answer5").value === "1") {
+    if (cookieAnswer5 === "1") {
         totalScore++;
-        alert(readCookie("answer5").value);
-        if (usedHint5 == true) {
+        if (cookieUsedHint5 === "true") {
             totalScore = totalScore - 0.5;
         }
     }
-    //code to tally and display the user score
     $("#final-score-value").text(totalScore + " ");
+    
+    //code to determine rank of user
+    if (totalScore <= 2.5) {
+        $("#ranking").text("You need to brush up on your songwriting techniques.")
+    }
+    else if (totalScore === 3 || totalScore === 3.5) {
+        $("#ranking").text("Not bad!  Keep woodshedding and you'll get there.")
+    }
+    else if (totalScore === 4 || totalScore === 4.5) {
+        $("#ranking").text("Impressive! Just gotta fill in a couple of gaps in your songwriting knowledge.")
+    }
+    else if (totalScore === 5) {
+        $("#ranking").text("Flawless victory!  You're a rockstar!")
+    }
 }
 
 $(document).ready(function(){
     readyForQuiz();
 });
-
-/* if (document.getElementById("hint-1-text")) {
-                questionsAnswered = questionsAnswered - 0.5;
-                alert(questionsAnswered);
-} */
