@@ -13,106 +13,110 @@
         <section class="content">
             <div id="ready-state">
                 <h2>Are you ready to test your pen?</h2>
-                <form id="start-quiz" action="javascript:startQuiz()">
-                    <input class="start-quiz" type="submit" value="I was born ready.">
+                <form id="start-quiz">
+                    <input class="start-quiz" type="submit" value="I was born ready." onclick="javascript:startQuiz()">
                 </form>
             </div>
-            <div id="question-1">
+            <div id="question-1" class="questions">
                 <h2>Question 1:  Which song's chorus melodies are characterized by an "inverted U" contour?</h2>
                 <div class="hint-container">
                     <form id="hint-1-toggle">
-                        <input id="hint-1" type="submit" value="Hint" onclick="javascript:showHint1()">
-                        <input id="hide-hint-1" type="submit" value="Hide hint" onclick="hideHint1()">
+                        <input id="show-hint-1" class="show-hint" type="submit" value="Hint" onclick="javascript:showHint1()">
                     </form>
-                    <span id="hint-1-text">An "inverted U" melodic countour means that the melody ascends in pitch, then descends.</span>
+                    <span id="hint-1-text" class="hint-text">An "inverted U" melodic countour means that the melody ascends in pitch, then descends.</span>
                 </div>
                 <br />
-                <form id="answers1form" >
-                    <input type="radio" name="answers1" value="right"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)
-                    <span id="correct-1"> You got it right!</span><br>
-                    <input type="radio" name="answers1" value="wrongB"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)
-                    <span id="incorrect-1b"> Wrong...</span><br>
-                    <input type="radio" name="answers1" value="wrongC"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)
-                    <span id="incorrect-1c"> Wrong...</span><br> 
-                    <input id="submit-answer-1" type="submit" value="Submit answer" onclick="javascript:evaluateQuestion1()">
-                    <input id="next-question-1" type="submit" value="Next question" onclick="javascript:moveToQuestion2()">
+                <form id="answers1form">
+                    <input type="radio" name="answers1" value="1"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)
+                    <br>
+                    <input type="radio" name="answers1" value="2"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)
+                    <br>
+                    <input type="radio" name="answers1" value="3"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)
+                    <br> 
+                    <input id="submit-answer-1" class="submit-answer"  type="submit" value="Submit answer" onclick="javascript:evaluateQuestion1()">
+                    <input id="next-question-2" class="next-question" type="submit" value="Next question" onclick="javascript:moveToQuestion2()">
                 </form>
-                <script>
+                <!-- <script>
                     if(answers1[0].value = readCookie("answers1")) document.answers1form.answers1[0].checked = true;
                     if(answers1[1].value = readCookie("answers1")) document.answers1form.answers1[1].checked = true;
                     if(answers1[2].value = readCookie("answers1")) document.answers1form.answers1[2].checked = true;
-                </script>
+                </script> -->
                 <br />
             </div>
-            <div id="question-2">
+            <div id="question-2" class="questions">
                 <h2>Question 2:  Which song's chorus melody differentiates itself at the beginning with a syncopated staccato melody?</h2>
                 <div class="hint-container">
-                    <form id="hint-2-toggle" action="javascript:showHint2()">
-                        <input class="hint-2" type="submit" value="Hint">
+                    <form id="hint-2-toggle">
+                        <input id="show-hint-2" class="show-hint" type="submit" value="Hint" onclick="javascript:showHint2()">
                     </form>
-                    <span id="hint-2-text">"Syncopated" means beats other than the downbeat are emphasized in the melody.  "Staccato" means that the melody has notes of extrememly short duration, like a pulse. </span>
+                    <span id="hint-2-text" class="hint-text">"Syncopated" means beats other than the downbeat are emphasized in the melody.  "Staccato" means that the melody has notes of extrememly short duration, like a pulse. </span>
                 </div>
                 <br />
-                <form id="answers-2">
-                    <input type="radio" name="answers-2" value="Answer 1"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)<span id="incorrect-2a"> Wrong...</span><br>
-                    <input type="radio" name="answers-2" value="Answer 2"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)<span id="incorrect-2b"> Wrong...</span><br>
-                    <input type="radio" name="answers-2" value="Answer 3"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)<span id="correct-2"> You got it right!</span><br> 
-                    <input id="submit-answer-2" type="submit" value="Submit answer">
-                    <input id="next-question-2" type="submit" value="Next question">
+                <form id="answers2form">
+                    <input type="radio" name="answers2" value="1"> <iframe id="ytplayerJamesBay" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/mqiH0ZSkM9I?start=91" frameborder="0"></iframe> (chorus starts at 1:31)<br>
+                    <input type="radio" name="answers2" value="2"> <iframe id="ytplayerEdSheeran" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/lp-EO5I60KA?start=79" frameborder="0"></iframe> (chorus starts at 1:19)<br>
+                    <input type="radio" name="answers2" value="3"> <iframe id="ytplayerHozier" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/nH7bjV0Q_44?start=62" frameborder="0"></iframe> (chorus starts at 1:02)<br> 
+                    <input id="submit-answer-2" class="submit-answer"  type="submit" value="Submit answer" onclick="javascript:evaluateQuestion2()">
+                    <input id="next-question-3" class="next-question" type="submit" value="Next question" onclick="javascript:moveToQuestion3()">
                 </form>
                 <br />
             </div>
-            <div id="question-3">
+            <div id="question-3" class="questions">
                 <h2>Question 3:  Which song uses the same* lyrics and melody in both the verse and chorus?</h2>
                 <div class="hint-container">
                     <form id="hint-3">
-                        <input class="hint-3" type="submit" value="Hint">
+                        <input id="show-hint-3" class="show-hint" type="submit" value="Hint" onclick="javascript:showHint3()">
                     </form>
-                    <span id="hint-3-text">Ok ok, so the melodies are *almost* the same: they have the same notes and interval relationships, except that the chorus is a whole octave above the verse.</span>
+                    <span id="hint-3-text" class="hint-text">Ok ok, so the melodies are *almost* the same: they have the same notes and interval relationships, except that the chorus is a whole octave above the verse.</span>
                 </div>
                 <br />
-                <form id="answers-3">
-                    <input type="radio" name="answers-3" value="Answer 1"> <iframe id="ytplayerNickJonas" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/P1JCGSS9f_c?" frameborder="0"></iframe> (chorus starts at 0:42)<span id="incorrect-3a"> Wrong...</span><br>
-                    <input type="radio" name="answers-3" value="Answer 2"> <iframe id="ytplayerOneRepublic" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/jclnm-0ktHM?" frameborder="0"></iframe> (chorus starts at 1:24)<span id="correct-3"> You got it right!</span><br>
-                    <input type="radio" name="answers-3" value="Answer 3"> <iframe id="ytplayerAlessiaCara" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/De30ET0dQpQ?" frameborder="0"></iframe> (chorus starts at 1:15)<span id="incorrect-3c"> Wrong...</span><br> 
-                    <input id="submit-answer-3" type="submit" value="Submit answer">
-                    <input id="next-question-3" type="submit" value="Next question">
+                <form id="answers3form">
+                    <input type="radio" name="answers3" value="1"> <iframe id="ytplayerNickJonas" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/P1JCGSS9f_c?" frameborder="0"></iframe> (chorus starts at 0:42)<br>
+                    <input type="radio" name="answers3" value="2"> <iframe id="ytplayerOneRepublic" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/jclnm-0ktHM?" frameborder="0"></iframe> (chorus starts at 1:24)<br>
+                    <input type="radio" name="answers3" value="3"> <iframe id="ytplayerAlessiaCara" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/De30ET0dQpQ?" frameborder="0"></iframe> (chorus starts at 1:15)<br> 
+                    <input id="submit-answer-3" class="submit-answer"  type="submit" value="Submit answer" onclick="javascript:evaluateQuestion3()">
+                    <input id="next-question-4" class="next-question" type="submit" value="Next question" onclick="javascript:moveToQuestion4()">
                 </form>
                 <br />
             </div>
-            <div id="question-4">
+            <div id="question-4" class="questions">
                 <h2>Question 4:  Which song's chorus contains non-lyrical vocal hooks?</h2>
                 <div class="hint-container">
                     <form id="hint-4">
-                        <input class="hint-4" type="submit" value="Hint">
+                        <input id="show-hint-4" class="show-hint" type="submit" value="Hint" onclick="javascript:showHint4()">
                     </form>
-                    <span id="hint-4-text">Non-lyrical vocal hooks are melodies that have no words attached to them.  They often sound like chants and are meant to encourage audience sing-alongs.</span>
+                    <span id="hint-4-text" class="hint-text">Non-lyrical vocal hooks are melodies that have no words attached to them.  They often sound like chants and are meant to encourage audience sing-alongs.</span>
                 </div>
                 <br />
-                <form id="answers-4">
-                    <input type="radio" name="answers-4" value="Answer 1"> <iframe id="ytplayerNickJonas" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/P1JCGSS9f_c?start=42" frameborder="0"></iframe> (chorus starts at 0:42)<span id="incorrect-4a"> Wrong...</span><br>
-                    <input type="radio" name="answers-4" value="Answer 2"> <iframe id="ytplayerOneRepublic" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/jclnm-0ktHM?start=84" frameborder="0"></iframe> (chorus starts at 1:24)<span id="incorrect-4b"> Wrong...</span><br>
-                    <input type="radio" name="answers-4" value="Answer 3"> <iframe id="ytplayerAlessiaCara" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/De30ET0dQpQ?start=75" frameborder="0"></iframe> (chorus starts at 1:15)<span id="correct-4"> You got it right!</span><br> 
-                    <input id="submit-answer-4" type="submit" value="Submit answer">
-                    <input id="next-question-4" type="submit" value="Next question">
+                <form id="answers4form">
+                    <input type="radio" name="answers4" value="1"> <iframe id="ytplayerNickJonas" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/P1JCGSS9f_c?start=42" frameborder="0"></iframe> (chorus starts at 0:42)
+                    <br>
+                    <input type="radio" name="answers4" value="2"> <iframe id="ytplayerOneRepublic" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/jclnm-0ktHM?start=84" frameborder="0"></iframe> (chorus starts at 1:24)
+                    <br>
+                    <input type="radio" name="answers4" value="3"> <iframe id="ytplayerAlessiaCara" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/De30ET0dQpQ?start=75" frameborder="0"></iframe> (chorus starts at 1:15)
+                    <br> 
+                    <input id="submit-answer-4" class="submit-answer" type="submit" value="Submit answer" onclick="javascript:evaluateQuestion4()">
+                    <input id="next-question-5" class="next-question" type="submit" value="Next question" onclick="javascript:moveToQuestion5()">
                 </form>
-                
             </div>
-            <div id="question-5">
+            <div id="question-5" class="questions">
                 <h2>Question 5:  Which song's chorus makes use of internal rhymes?</h2>
                 <div class="hint-container">
                     <form id="hint-5">
-                        <input class="hint-5" type="submit" value="Hint">
+                        <input id="show-hint-5" class="show-hint" type="submit" value="Hint" onclick="javascript:showHint5()">
                     </form>
-                    <span id="hint-5-text">Internal rhymes are found within a line, as opposed to the end of lines.<br>Example: "On that <b>day</b> I <b>ate</b> a <b>baked</b> pie."</span>
+                    <span id="hint-5-text" class="hint-text">Internal rhymes are found within a line, as opposed to the end of lines.<br>Example: "On that <b>day</b> I <b>ate</b> a <b>baked</b> pie."</span>
                 </div>
                 <br />
-                <form id="answers-5">
-                    <input type="radio" name="answers-5" value="Answer 1"> <iframe id="ytplayerMaxwell" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/9nJkGH80suo?start=46" frameborder="0"></iframe> (chorus starts at 0:46)<span id="correct-5"> You got it right!</span><br>
-                    <input type="radio" name="answers-5" value="Answer 2"> <iframe id="ytplayerDAngelo" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/T3CunfPYkME?start=57" frameborder="0"></iframe> (chorus starts at 0:57)<span id="incorrect-5b"> Wrong...</span><br>
-                    <input type="radio" name="answers-5" value="Answer 3"> <iframe id="ytplayerJillScott" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/m5FDlbfnSVU?start=57" frameborder="0"></iframe> (chorus starts at 0:57)<span id="incorrect-5c"> Wrong...</span><br> 
-                    <input id="submit-answer-5" type="submit" value="Submit answer">
-                    <input id="get-results" type="submit" value="How'd I do?">
+                <form id="answers5form">
+                    <input type="radio" name="answers5" value="1"> <iframe id="ytplayerMaxwell" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/9nJkGH80suo?start=46" frameborder="0"></iframe> (chorus starts at 0:46)
+                    <br>
+                    <input type="radio" name="answers5" value="2"> <iframe id="ytplayerDAngelo" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/T3CunfPYkME?start=57" frameborder="0"></iframe> (chorus starts at 0:57)
+                    <br>
+                    <input type="radio" name="answers5" value="3"> <iframe id="ytplayerJillScott" type="text/html" width="400" height="80"  src="https://www.youtube.com/embed/m5FDlbfnSVU?start=57" frameborder="0"></iframe> (chorus starts at 0:57)
+                    <br> 
+                    <input id="submit-answer-5" class="submit-answer"  type="submit" value="Submit answer" onclick="javascript:evaluateQuestion5()">
+                    <input id="get-results" type="submit" value="How'd I do?" onclick="javascript:goToResults()">
                 </form>
                 <br />
             </div>
@@ -126,11 +130,11 @@
         </section>
         <footer class="content">
             <div class="progress-tracker">
-                <span id="total-score"><h3>Total score:<span id="total-score-value"></span>/ 5</h3></span>
-                <span id="questions-answered"><h3>Questions answered:<span id="questions-answered-value"></span>/ 5</h3></span>
+                <!--<span id="total-score"><h3>Total score:<span id="total-score-value"></span>/ 5</h3></span> -->
+                <span id="questions-answered"><h3>Questions answered:<span id="questions-answered-value">0</span> / 5</h3></span>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="js/app.js"></script>
+	    <script src="js/app.js"></script>
     </body>
 </html>
